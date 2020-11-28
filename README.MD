@@ -1,5 +1,6 @@
 # BT_PROFILE
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Donate](paypal.svg?raw=true)](https://www.paypal.me/ugjka)
 
 Switch between the HSP/HFP and A2DP Bluetooth profiles from the system tray
@@ -23,7 +24,7 @@ Usage of bt_profile:
 
 ## Installation
 
-Arch linux PKGBUILD in the archlinux folder
+Archlinux PKGBUILD in the archlinux folder
 
 ### Using make
 
