@@ -18,9 +18,21 @@ Usage of bt_profile:
 
 ## Example
 
+Find the sink first
+
+```text
+$ pactl list cards | grep Name
+        Name: alsa_card.pci-0000_00_1b.0
+        Name: bluez_card.F4_0E_11_7E_93_EB
+```
+
+Then use it
+
 `$ bt_profile -sink "bluez_card.F4_0E_11_7E_93_EB"`
 
 ![screenshot](bt_profile.png?raw=true)
+
+Now you can put this in your DE start up script
 
 ## Installation
 
