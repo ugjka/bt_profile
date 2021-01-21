@@ -10,14 +10,19 @@ import (
 )
 
 var sink string
+var codec string
 var showQuit bool
 
 func main() {
 	s := flag.String("sink", "1", "headset's pulseaudio sink")
 	q := flag.Bool("quit", false, "show the quit item")
+	c := flag.String("codec", "", "custom codec e.g. aac, ldac")
 	flag.Parse()
 	sink = *s
 	showQuit = *q
+	if *c != "" {
+		codec = "_" + *c
+	}
 	systray.Run(onready, nil)
 }
 
@@ -34,7 +39,7 @@ func onready() {
 		case <-quit.ClickedCh:
 			systray.Quit()
 		case <-a2dp.ClickedCh:
-			exec.Command("pactl", "set-card-profile", sink, "a2dp_sink").Run()
+			exec.Command("pactl", "set-card-profile", sink, "a2dp_sink"+codec).Run()
 		case <-hsphfp.ClickedCh:
 			exec.Command("pactl", "set-card-profile", sink, "headset_head_unit").Run()
 		}

@@ -10,6 +10,8 @@ Switch between the HSP/HFP and A2DP Bluetooth profiles from the system tray
 ```text
 $ bt_profile --help
 Usage of bt_profile:
+  -codec string
+        custom codec e.g. aac, ldac
   -quit
         show the quit item
   -sink string

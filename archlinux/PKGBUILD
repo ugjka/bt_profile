@@ -2,7 +2,7 @@
 
 _pkgname=bt_profile
 pkgname="$_pkgname-git"
-pkgver=2020
+pkgver=20201129.a7a1660
 pkgrel=1
 pkgdesc='BT Profile Switcher'
 arch=('x86_64')
