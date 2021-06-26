@@ -42,7 +42,7 @@ Archlinux PKGBUILD in the archlinux folder
 
 ### Using make
 
-You need make, go, go-tools
+You need make, go, go-tools, libappindicator-gtk3
 
 Build with `make`
 
