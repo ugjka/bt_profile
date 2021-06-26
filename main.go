@@ -26,10 +26,13 @@ func main() {
 	systray.Run(onready, nil)
 }
 
+const hifi = "A2DP"
+const headset = "HSP/HFP"
+
 func onready() {
 	systray.SetIcon(icon)
-	a2dp := systray.AddMenuItem("A2DP", "Switch to A2DP mode")
-	hsphfp := systray.AddMenuItem("HSP/HFP", "Switch to HSP/HFP mode")
+	a2dp := systray.AddMenuItem(hifi+" 🎧", "Switch to A2DP mode")
+	hsphfp := systray.AddMenuItem(headset, "Switch to HSP/HFP mode")
 	quit := systray.AddMenuItem("Quit", "Quit the app")
 	if !showQuit {
 		quit.Hide()
@@ -40,8 +43,12 @@ func onready() {
 			systray.Quit()
 		case <-a2dp.ClickedCh:
 			exec.Command("pactl", "set-card-profile", sink, "a2dp_sink"+codec).Run()
+			a2dp.SetTitle(hifi + " 🎧")
+			hsphfp.SetTitle(headset)
 		case <-hsphfp.ClickedCh:
 			exec.Command("pactl", "set-card-profile", sink, "headset_head_unit").Run()
+			hsphfp.SetTitle(headset + " 🎧")
+			a2dp.SetTitle(hifi)
 		}
 	}
 }
