@@ -18,6 +18,8 @@ Usage of bt_profile:
         headset's pulseaudio sink (default "1")
 ```
 
+* custom codecs are supported by https://github.com/EHfive/pulseaudio-modules-bt
+
 ## Example
 
 Find the sink first
