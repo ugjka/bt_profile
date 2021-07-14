@@ -1,5 +1,7 @@
 # BT_PROFILE
 
+## Archiving, I no longer need this
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Donate](paypal.svg?raw=true)](https://www.paypal.me/ugjka)
 
